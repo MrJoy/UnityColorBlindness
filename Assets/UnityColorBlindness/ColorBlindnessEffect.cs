@@ -1,10 +1,11 @@
 /*
   Red/Green Color-Blindness Simulation Effect
-  (C)Copyright 2008, MrJoy Inc, All rights reserved.
+  (C)Copyright 2008-2013, MrJoy Inc, All rights reserved.
 
-  Version: 1.0, 2008-04-28
+  Version: 1.0.1, 2013-03-01
 
   Changes:
+    -2013-03-01, jfrisby: Fix deprecation.
     -2008-04-28, jfrisby: Initial version.
 
   Notes: This is intended to help you look for problems that may make it
