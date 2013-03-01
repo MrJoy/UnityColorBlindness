@@ -26,6 +26,6 @@ using UnityEngine;
 public class ColorBlindnessEffect : ImageEffectBase {
 	// Called by camera to apply image effect
 	void OnRenderImage (RenderTexture source, RenderTexture destination) {
-		ImageEffects.BlitWithMaterial (material, source, destination);
+		Graphics.Blit(source, destination, material);
 	}
 }
