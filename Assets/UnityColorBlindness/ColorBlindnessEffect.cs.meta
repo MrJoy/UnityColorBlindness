@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: b2ef628844d7849618e2246d79d2c8c2
+guid: a78704d9b50f343abb9680a2c44f50d0
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - grabPassShader: {fileID: 4800000, guid: 4a8e4aff44b7c4750b8f6e267e0192a4, type: 1}
+  - colorAlterationShader: {fileID: 4800000, guid: caeb8a4a6bbf84c02b316f3779a0a99d,
+      type: 1}
   executionOrder: 0
   icon: {instanceID: 0}

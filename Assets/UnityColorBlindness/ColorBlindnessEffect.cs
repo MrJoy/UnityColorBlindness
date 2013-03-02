@@ -1,32 +1,65 @@
-/*
-  Red/Green Color-Blindness Simulation Effect
-  (C)Copyright 2008-2013, MrJoy Inc, All rights reserved.
-
-  Version: 1.0.1, 2013-03-01
-
-  Changes:
-    -2013-03-01, jfrisby: Fix deprecation.
-    -2008-04-28, jfrisby: Initial version.
-
-  Notes: This is intended to help you look for problems that may make it
-  difficult for users of your game to play if they suffer from red/green color
-  blindness.  This is NOT based on a specific study of how red/green color
-  blindness behaves but is a coarse approximation and should be treated as
-  such.
-  Specifically, this may be useful in spotting major color issues but NOT
-  finding issues with it does not mean you have no color issues and this should
-  absolutely not be used for "fine tuning" the color palette of your game!
-
-  License: Feel free to use this code however you wish, but please give credit
-  where credit is due.
-*/
 using UnityEngine;
+using System.Collections;
+using System.Linq;
+
+public static class ColorModificationExtensions {
+    private static Vector3[][] TRANSFORMS = new Vector3[][] {
+      new Vector3[] { new Vector3(1f,    0f,    0f),     new Vector3(0f,    1f,    0f),     new Vector3(0f,    0f,    1f)     },
+      new Vector3[] { new Vector3(0.567f,0.433f,0f),     new Vector3(0.558f,0.442f,0f),     new Vector3(0f,    0.242f,0.758f) },
+      new Vector3[] { new Vector3(0.817f,0.183f,0f),     new Vector3(0.333f,0.667f,0f),     new Vector3(0f,    0.125f,0.875f) },
+      new Vector3[] { new Vector3(0.625f,0.375f,0f),     new Vector3(0.7f,  0.3f,  0f),     new Vector3(0f,    0.3f,  0.7f)   },
+      new Vector3[] { new Vector3(0.8f,  0.2f,  0f),     new Vector3(0.258f,0.742f,0f),     new Vector3(0f,    0.142f,0.858f) },
+      new Vector3[] { new Vector3(0.95f, 0.05f, 0f),     new Vector3(0f,    0.433f,0.567f), new Vector3(0f,    0.475f,0.525f) },
+      new Vector3[] { new Vector3(0.967f,0.033f,0f),     new Vector3(0f,    0.733f,0.267f), new Vector3(0f,    0.183f,0.817f) },
+      new Vector3[] { new Vector3(0.299f,0.587f,0.114f), new Vector3(0.299f,0.587f,0.114f), new Vector3(0.299f,0.587f,0.114f) },
+      new Vector3[] { new Vector3(0.618f,0.320f,0.062f), new Vector3(0.163f,0.775f,0.062f), new Vector3(0.163f,0.320f,0.516f) },
+    };
+    public static Vector3 RedCoefficients(this ColorModification mode)   { return TRANSFORMS[(int)mode][0]; }
+    public static Vector3 BlueCoefficients(this ColorModification mode)  { return TRANSFORMS[(int)mode][1]; }
+    public static Vector3 GreenCoefficients(this ColorModification mode) { return TRANSFORMS[(int)mode][2]; }
+}
+public enum ColorModification {
+  Normal = 0,
+  Protanopia = 1,
+  Protanomaly = 2,
+  Deuteranopia = 3,
+  Deuteranomaly = 4,
+  Tritanopia = 5,
+  Tritanomaly = 6,
+  Achromatopsia = 7,
+  Achromatomaly = 8,
+};
 
 [ExecuteInEditMode]
-[AddComponentMenu("Image Effects/Color Blindness")]
-public class ColorBlindnessEffect : ImageEffectBase {
-  // Called by camera to apply image effect
-  void OnRenderImage (RenderTexture source, RenderTexture destination) {
-    Graphics.Blit(source, destination, material);
+[RequireComponent(typeof(Camera))]
+[AddComponentMenu("Image Effects/Simulate Color Blindness")]
+public class ColorBlindnessEffect : MonoBehaviour {
+  public ColorModification mode = ColorModification.Normal;
+  public Shader colorAlterationShader;
+  private Material mat = null;
+
+  public void OnEnable() {}
+
+  public IEnumerator OnPostRender() {
+    if(colorAlterationShader == null) yield break;
+    if(mat && colorAlterationShader != mat.shader) {
+      Destroy(mat);
+      mat = null;
+    }
+
+    // Wait until after everything else has happened, *including* rendering the
+    // GUI!
+    yield return new WaitForEndOfFrame();
+
+    if(!mat) {
+      mat = new Material(colorAlterationShader);
+      mat.hideFlags = HideFlags.HideAndDontSave;
+    }
+
+    mat.SetVector("_RedTx",   mode.RedCoefficients());
+    mat.SetVector("_GreenTx", mode.BlueCoefficients());
+    mat.SetVector("_BlueTx",  mode.GreenCoefficients());
+
+    Graphics.Blit(null, mat);
   }
 }
