@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Grass
+  m_Name: Cube3
   m_Shader: {fileID: 7, guid: 0000000000000000e000000000000000, type: 0}
   m_SavedProperties:
     serializedVersion: 2
@@ -23,4 +23,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .0843983069, g: .43921569, b: .139745891, a: 1}
+        second: {r: .345098048, g: .318359524, b: .110972703, a: 1}
