@@ -1,3 +1,17 @@
+/*
+  Color-Blindness Simulation Effect
+  (C)Copyright 2008-2012, Jon Frisby, All rights reserved.
+
+  Version: 2.0, 2012-12-06
+
+  Changes:
+    -2012-12-06, jfrisby: Overhaul to take effect after GUI is rendered.
+                          Add support for all major variants of color-blindness.
+    -2008-04-28, jfrisby: Initial version.
+
+  License: Feel free to use this code however you wish, but please give credit
+  where credit is due.
+*/
 using UnityEngine;
 using System.Collections;
 using System.Linq;
