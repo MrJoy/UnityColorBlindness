@@ -17,3 +17,9 @@
 *.mdb
 *.mdb.meta
 
+# Asset Store Tools...
+/Assets/AssetStoreTools*
+
+# Miscellaneous...
+/Builds/
+/Etc/
