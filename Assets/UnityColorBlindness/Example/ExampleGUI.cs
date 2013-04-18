@@ -17,5 +17,12 @@ public class ExampleGUI : MonoBehaviour {
     GUILayout.EndArea();
 
     GUI.color = originalColor;
+
+    float xSize = 350.0f;
+    float xOffset = (Screen.width - xSize) / 2.0f;
+    GUILayout.BeginArea(new Rect(xOffset, 0, 350, 150), "Instructions", "window");
+      GUILayout.Label("Press ` to enable/disable the colorblindness control panel.");
+      GUILayout.Label("Press left-ctrl+left-shift+N to switch between colorblindness modes.");
+    GUILayout.EndArea();
   }
 }
