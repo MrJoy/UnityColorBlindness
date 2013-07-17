@@ -1,7 +1,7 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!29 &1
-Scene:
+SceneSettings:
   m_ObjectHideFlags: 0
   m_PVSData: 
   m_QueryMode: 1
@@ -27,7 +27,7 @@ RenderSettings:
   m_SpotCookie: {fileID: 0}
   m_ObjectHideFlags: 0
 --- !u!127 &3
-GameManager:
+LevelGameManager:
   m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
@@ -79,7 +79,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 46363401}
   - 33: {fileID: 46363403}
@@ -132,7 +132,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 253772675}
   - 108: {fileID: 253772676}
@@ -194,7 +194,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 330030066}
   - 33: {fileID: 330030068}
@@ -260,7 +260,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 461200952}
   - 114: {fileID: 461200953}
@@ -290,14 +290,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 461200951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ec5184b22e854e1092a88f63ba01050, type: 1}
+  m_Script: {fileID: 11500000, guid: 7ec5184b22e854e1092a88f63ba01050, type: 3}
   m_Name: 
 --- !u!1 &662098416
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 662098417}
   - 33: {fileID: 662098419}
@@ -350,7 +350,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 1042960809}
   - 33: {fileID: 1042960811}
@@ -403,7 +403,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 1330960039}
   - 20: {fileID: 1330960040}
@@ -487,11 +487,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1330960038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a78704d9b50f343abb9680a2c44f50d0, type: 1}
+  m_Script: {fileID: 11500000, guid: a78704d9b50f343abb9680a2c44f50d0, type: 3}
   m_Name: 
   mode: 0
   colorAlterationShader: {fileID: 4800000, guid: caeb8a4a6bbf84c02b316f3779a0a99d,
-    type: 1}
+    type: 3}
 --- !u!114 &1330960045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1330960038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4018c1ff088e4780a062257e5198f99, type: 1}
+  m_Script: {fileID: 11500000, guid: c4018c1ff088e4780a062257e5198f99, type: 3}
   m_Name: 
   displayOnStart: 1
   toggleModifierKeys: 
@@ -511,7 +511,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 2060508829}
   - 33: {fileID: 2060508831}

@@ -5,7 +5,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400002}
@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -36,7 +36,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76a5b57efd24240eea78c774f1d766f9, type: 1}
+  m_Script: {fileID: 11500000, guid: 76a5b57efd24240eea78c774f1d766f9, type: 3}
   m_Name: 
   skin: {fileID: 11400000, guid: 4c473a77d3b5e4606891a43146e869dc, type: 2}
   highestClickStreak: 
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea5ddcb9d4654b50847b8f21e66e543, type: 1}
+  m_Script: {fileID: 11500000, guid: cea5ddcb9d4654b50847b8f21e66e543, type: 3}
   m_Name: 
   skin: {fileID: 11400000, guid: 4c473a77d3b5e4606891a43146e869dc, type: 2}
   pointsPerClick: 100

@@ -5,7 +5,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
   - 198: {fileID: 19800000}
@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -37,7 +37,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60ba551d210da4d4fa4203ccfe9782b5, type: 1}
+  m_Script: {fileID: 11500000, guid: 60ba551d210da4d4fa4203ccfe9782b5, type: 3}
   m_Name: 
   system: {fileID: 19800000}
 --- !u!198 &19800000
@@ -286,10 +286,12 @@ ParticleSystem:
     inheritVelocity: 0
     maxNumParticles: 1000
   ShapeModule:
+    serializedVersion: 2
     enabled: 1
     type: 1
     radius: .00999999978
     angle: 25
+    length: 5
     boxX: 1
     boxY: 1
     boxZ: 1
@@ -723,6 +725,9 @@ ParticleSystem:
       minMaxState: 3
     inWorldSpace: 0
     randomizePerFrame: 1
+  ExternalForcesModule:
+    enabled: 0
+    multiplier: 1
   ClampVelocityModule:
     enabled: 0
     x:
@@ -858,6 +863,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     separateAxis: 0
+    inWorldSpace: 0
     dampen: 1
   SizeBySpeedModule:
     enabled: 0
@@ -1041,11 +1047,20 @@ ParticleSystem:
     bounce: 1
     energyLossOnCollision: 0
     minKillSpeed: 0
+    particleRadius: .00999999978
+    collidesWith:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    quality: 0
+    voxelSize: .5
   SubModule:
     enabled: 0
     subEmitterBirth: {fileID: 0}
-    subEmitterDeath: {fileID: 0}
+    subEmitterBirth1: {fileID: 0}
     subEmitterCollision: {fileID: 0}
+    subEmitterCollision1: {fileID: 0}
+    subEmitterDeath: {fileID: 0}
+    subEmitterDeath1: {fileID: 0}
 --- !u!199 &19900000
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
@@ -1070,8 +1085,12 @@ ParticleSystemRenderer:
   m_VelocityScale: .100000001
   m_LengthScale: 0
   m_SortingFudge: 100
+  m_NormalDirection: 0
   m_SortMode: 0
   m_Mesh: {fileID: 0}
+  m_Mesh1: {fileID: 0}
+  m_Mesh2: {fileID: 0}
+  m_Mesh3: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
