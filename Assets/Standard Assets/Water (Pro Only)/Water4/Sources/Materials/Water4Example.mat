@@ -155,12 +155,12 @@ Material:
     m_Floats:
       data:
         first:
-          name: _FresnelScale
-        second: .657142818
-      data:
-        first:
           name: _Shininess
         second: 313.218384
+      data:
+        first:
+          name: _FresnelScale
+        second: .657142818
       data:
         first:
           name: _GerstnerIntensity
@@ -244,8 +244,20 @@ Material:
     m_Colors:
       data:
         first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
           name: _MainTex_ST
         second: {r: 1, g: 1, b: 0, a: 0}
+      data:
+        first:
+          name: _Displacement
+        second: {r: 6.6371665, g: 20.3539829, b: -1, a: -.681415975}
+      data:
+        first:
+          name: _ShoreTiling
+        second: {r: 1, g: 1, b: .100000001, a: .100000001}
       data:
         first:
           name: _ReflectionTex_ST
@@ -322,18 +334,6 @@ Material:
         first:
           name: _GDirectionCD
         second: {r: .70338881, g: -.679999888, b: .717573524, a: -.200000003}
-      data:
-        first:
-          name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _Displacement
-        second: {r: 6.6371665, g: 20.3539829, b: -1, a: -.681415975}
-      data:
-        first:
-          name: _ShoreTiling
-        second: {r: 1, g: 1, b: .100000001, a: .100000001}
       data:
         first:
           name: _RefrColor
