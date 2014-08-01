@@ -1,5 +1,7 @@
 # UnityColorBlindness
 
+[![Gitter Chat](https://badges.gitter.im/MrJoy/UnityColorBlindness.png)](https://gitter.im/MrJoy/UnityColorBlindness)
+
 UnityColorBlindness is a tool for Unity3D to allow developers with normal color
 vision to simulate the various forms of "color blindness" (atypical color
 perception) in your game.
